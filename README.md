@@ -3,7 +3,7 @@ A wrapper of git2go, tries to simplify the library by implementing
 functions that mimic the most commonly used git commands.
 
 ## Install
-```
+```sh
 go get github.com/liteByte/SimpleGit
 ```
 
@@ -14,7 +14,7 @@ GOPATH for SimpleGit to work.
 The names of the functions are the same as the git commands they mimic,
 so what they do is pretty self explanatory if you know git.
 
-```
+```go
 import "github.com/liteByte/SimpleGit"
 
 // ...
