@@ -17,26 +17,25 @@ so what they do is pretty self explanatory if you know git.
 ```
 import "github.com/liteByte/SimpleGit"
 
-// [...]
+// ...
 
 repo, err := sig.GitClone("https://github.com/liteByte/SimpleGit.git", "master", "projects", sig.MakeGitCredentials("username", "password"))
-	if err != nil {
-		panic(err)
-	}
+if err != nil {
+    panic(err)
+}
 
-	// Do stuff
+// Do stuff
 
-	err = repo.GitAdd("changedFile.txt", "changedFile2.txt")
+err = repo.GitAdd("changedFile.txt", "changedFile2.txt")
 
-	author := sig.MakeGitSignature("Name", "Email")
-	committer := sig.MakeGitSignature("Name", "Email")
+author := sig.MakeGitSignature("Name", "Email")
+committer := sig.MakeGitSignature("Name", "Email")
 
-	err = repo.GitCommit("master", "Modify files", author, committer)
+err = repo.GitCommit("master", "Modify files", author, committer)
 
-	// Don't reuse git credentials, make a new one every time
-	// (don't feel like explaining, I'll fix this later)
-	err = repo.GitPush("origin", "master", sig.MakeGitCredentials("username", "password"))
-
+// Don't reuse git credentials, make a new one every time
+// (don't feel like explaining, I'll fix this later)
+err = repo.GitPush("origin", "master", sig.MakeGitCredentials("username", "password"))
 ```
 
 ## Disclaimer
