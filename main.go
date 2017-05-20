@@ -1,4 +1,4 @@
-package util
+package sig
 
 import (
 	"github.com/libgit2/git2go"
